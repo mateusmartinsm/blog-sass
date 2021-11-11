@@ -18,6 +18,16 @@ $img-width: 45%
     display: flex
     #{$property}: #{$jty-cnt}
 
+@mixin for-phone-only
+    @media (max-width: 767.98px)
+        @content
+@mixin for-tablet-only
+    @media (min-width: 768px) and (max-width: 1199.98px)
+        @content
+@mixin for-desktop-only
+    @media (min-width: 1200px)
+        @content
+
 .header
     font-family: Arial, Helvetica, sans-serif
 
@@ -36,8 +46,20 @@ $img-width: 45%
             margin-right: auto
             width: 80%
             padding: 20px 0
+            @include for-phone-only
+                width: 90%
+                padding: 15px 0
+                flex-wrap: wrap
+            @include for-tablet-only
+                width: 80%
+                padding: 20px 0
+            @include for-desktop-only
+                width: 80%
+                padding: 20px 0
         &__links
             position: relative
+            @include for-phone-only
+                padding: 5px 0
             
             &:not(:last-child)::after
                 content: ""
@@ -79,6 +101,8 @@ $img-width: 45%
     font-family: Arial, Helvetica, sans-serif
 
     &__content
+        @include for-phone-only
+            width: 100%
         width: 70%
         padding: 40px 8px
     &__post
@@ -199,6 +223,9 @@ $img-width: 45%
             margin: 5px 0 0 0
 
 .about
+    @include for-phone-only
+        width: 90%
+
     width: 80%
     margin: 0 auto 40px
     font-family: Arial, Helvetica, sans-serif
@@ -241,6 +268,8 @@ $img-width: 45%
         margin: 30px auto
         text-align: center
         font-size: 16px
+        @include for-phone-only
+            width: 90%
     &__split
         display: flex
         justify-content: center
@@ -248,14 +277,22 @@ $img-width: 45%
         align-items: center
     &__img-description
         width: $img-width
+        @include for-phone-only
+            width: 80%
     &__txt
         width: calc(100% - #{$img-width})
+        @include for-phone-only
+            width: 90%
+            text-align: center
     &__p
         font-size: 14px
         padding: 10px 20px
         color: $dark-grey
 
 .article
+    @include for-phone-only
+        width: 90%
+
     width: 80%
     margin: 0 auto 40px
     font-family: Arial, Helvetica, sans-serif
