@@ -4,7 +4,7 @@
     text-align: center; }
   .header__img {
     max-width: 350px; }
-  .header__menu .menu__list {
+  .header .menu__list {
     display: flex;
     justify-content: center;
     border-top: 1px solid #eaeaeb;
@@ -13,9 +13,9 @@
     margin-right: auto;
     width: 80%;
     padding: 20px 0; }
-  .header__menu .menu__links {
+  .header .menu__links {
     position: relative; }
-    .header__menu .menu__links:not(:last-child)::after {
+    .header .menu__links:not(:last-child)::after {
       content: "";
       position: absolute;
       top: 0;
@@ -25,12 +25,11 @@
       height: 15px;
       width: 1px;
       background-color: #eaeaeb; }
-  .header__menu .menu__link {
+  .header .menu__link {
     padding: 0 25px;
     color: #464646; }
-
-.header__menu .menu__list .menu__links .menu__link:hover {
-  color: #A050BE; }
+    .header .menu__link:hover {
+      color: #A050BE; }
 
 .footer {
   text-align: center;
@@ -127,5 +126,59 @@
     margion-bottom: 10px; }
     .main__a:hover {
       color: #A050BE; }
+
+.about {
+  width: 80%;
+  margin: 0 auto 40px;
+  font-family: Arial, Helvetica, sans-serif; }
+  .about__title {
+    background-color: #eaeaeb;
+    text-align: center;
+    padding: 20px; }
+  .about__h1 {
+    font-size: 22px;
+    color: #464646;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0; }
+  .about .breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .about .breadcrumb__link {
+      font-size: 12px;
+      text-decoration: none;
+      color: #464646; }
+      .about .breadcrumb__link:hover {
+        text-decoration: underline;
+        color: #A050BE; }
+    .about .breadcrumb__img {
+      width: 10px;
+      margin: 8px; }
+  .about__img {
+    width: 100%;
+    margin-bottom: 20px; }
+  .about__intro {
+    font-weight: 100;
+    color: #464646;
+    width: 70%;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 16px; }
+  .about__split {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center; }
+  .about__img2 {
+    width: 45%; }
+  .about__txt {
+    width: calc(100% - 45%); }
+  .about__p {
+    font-size: 14px;
+    padding: 10px 20px;
+    color: #464646; }
 
 /*# sourceMappingURL=style.css.map */
