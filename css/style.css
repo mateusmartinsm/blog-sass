@@ -195,7 +195,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    width: 100%; }
+    @media (max-width: 767.98px) {
+      .collection__post {
+        width: 100%; } }
+    .collection__post.half {
+      width: 50%; }
+      @media (max-width: 767.98px) {
+        .collection__post.half {
+          width: 100%; } }
   .collection__figure {
     width: 50%; }
   .collection__img {
@@ -212,7 +221,16 @@
     text-decoration: unset;
     letter-spacing: 1px;
     width: 100%;
-    margin: 10px 0; }
+    margin: 10px 0;
+    font-size: 1.375rem; }
+    @media (max-width: 767.98px) {
+      .collection__title {
+        font-size: 1rem; } }
+    .collection__title.half {
+      font-size: 1.125rem; }
+      @media (max-width: 767.98px) {
+        .collection__title.half {
+          font-size: 1rem; } }
     .collection__title:hover {
       color: #A050BE;
       text-decoration: underline; }

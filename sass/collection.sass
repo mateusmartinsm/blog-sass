@@ -1,6 +1,22 @@
 $half-width: 50%
 $full-width: 100%
- 
+
+@mixin theme-collection($half-post: true)
+    @include for-phone-only
+        width: $full-width
+    @if $half-post
+        width: $half-width
+    @else
+        width: $full-width
+
+@mixin font-collection($half-title: true)
+    @include for-phone-only
+        @include fontSize(16px)
+    @if $half-title
+        @include fontSize(18px)
+    @else
+        @include fontSize(22px)
+
 .collection 
     display: flex
     flex-wrap: wrap
@@ -12,23 +28,23 @@ $full-width: 100%
     font-family: Arial
     @include for-phone-only
         width: 90%
-    
- 
+
     &__post 
         display: flex
         flex-wrap: wrap
         justify-content: center
         align-items: center
-    
- 
+        @include theme-collection($half-post: false)
+
+        &.half
+            @include theme-collection($half-post: true)
+
     &__figure 
         width: 50%
-    
- 
+
     &__img 
         width: 100%
-    
- 
+
     &__about 
         display: flex
         flex-wrap: wrap
@@ -36,21 +52,22 @@ $full-width: 100%
         align-items: center
         width: 50%
         text-align: center
-    
- 
+
     &__title 
         color: $dark-grey
         text-decoration: unset
         letter-spacing: 1px
         width: 100%
         margin: 10px 0
- 
+        @include font-collection($half-title: false)
+
+        &.half
+            @include font-collection($half-title: true)
+
         &:hover 
             color: $purple
             text-decoration: underline
-        
-    
- 
+
     &__date 
         @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right
         @include fontSize(12px)
@@ -61,9 +78,7 @@ $full-width: 100%
         
         @include for-tablet-only    
             width: 30%
-        
-    
- 
+
     &__tag 
         @include fontSize(14px)
         width: 50px
@@ -78,9 +93,7 @@ $full-width: 100%
         @include for-tablet-only    
             width: 35px
             @include fontSize(12px)
-        
-    
- 
+
     &__breadcrumb 
         background-color: $light-grey
         text-align: center
@@ -89,8 +102,7 @@ $full-width: 100%
         display: flex
         justify-content: center
         align-items: center
-    
- 
+
     .breadcrumb 
         &__link 
             @include fontSize(18px)
@@ -101,12 +113,7 @@ $full-width: 100%
             &:hover 
                 color: $purple
                 text-decoration: underline
-            
-        
- 
+
         &__img 
             width: 14px
             margin: 10px
-        
-    
- 
